@@ -37,3 +37,8 @@ gcloud dataproc jobs submit pyspark acled_pyspark_analytics.py \
     --region=us-west1 \
     -- gs://acled-pyspark-bucket/2020-01-01-2020-12-31.csv
 ```
+
+### BigQuery result
+![bigquery output](https://github.com/jcodezy/acled_dataproc_pyspark/blob/master/assets/bigquery_output.png)
+
+![bigquery events_per_day](https://github.com/jcodezy/acled_dataproc_pyspark/blob/master/assets/events_per_day.png)
