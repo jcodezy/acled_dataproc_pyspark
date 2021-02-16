@@ -8,7 +8,8 @@
 ```gcloud services enable dataproc.googleapis.com``` 
 
 2. Create a BigQuery dataset to write the tables to:
-```bq --location=us-west1 mk -d \
+```
+bq --location=us-west1 mk -d \
     --default_table_expiration=3600 \
     --description "my acled pyspark processing output dataset" \
     acled_dataset
