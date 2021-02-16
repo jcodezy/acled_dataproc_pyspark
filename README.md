@@ -1,13 +1,13 @@
 # Processing ACLED Data using Pyspark & Dataproc 
 
-### Using pyspark, I wanted to work with google cloud's dataproc compute engine and simulate processing a "large" csv file
+### Using pyspark, I wanted to work with google cloud's dataproc compute engine and simulate a batch processing of a "large" csv file
 
 ### Steps within Google Cloud Shell
 1. Enable Google DataProc: 
 
 ```gcloud services enable dataproc.googleapis.com``` 
 
-2. Create a BigQuery dataset to write the tables to:
+#### 2. Create a BigQuery dataset to write the tables to:
 ```
 bq --location=us-west1 mk -d \
     --default_table_expiration=3600 \
@@ -15,7 +15,7 @@ bq --location=us-west1 mk -d \
     acled_dataset
 ```
 
-3. Create DataProc cluster: 
+#### 3. Create DataProc cluster: 
 ```
 gcloud dataproc clusters create acled-pyspark-processing \
     --region=us-west1 \
@@ -24,11 +24,11 @@ gcloud dataproc clusters create acled-pyspark-processing \
     --temp-bucket=acled-pyspark-bucket
 ```
 
-4. Copy PySpark job file from Google Cloud Storage into current terminal session:
+#### 4. Copy PySpark job file from Google Cloud Storage into current terminal session:
 
 ```gsutil cp -r gs://${BUCKET-NAME}/acled_pyspark_analytics.py .```
 
-5. Submit PySpark job to DataProc: 
+#### 5. Submit PySpark job to DataProc: 
 
 ```
 gcloud dataproc jobs submit pyspark acled_pyspark_analytics.py \

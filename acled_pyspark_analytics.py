@@ -39,7 +39,7 @@ df.write.format("bigquery") \
     .option('table', 'acled_dataset.historic_fact_table') \
     .save()
 
-# 2. events per day 2020 (to chart later?)
+# 2. events per day 2020 
 events_per_day = df.select("event_date", "year") \
     .groupBy("event_date", "year") \
     .agg(
