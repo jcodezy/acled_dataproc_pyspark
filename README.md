@@ -15,7 +15,8 @@
 ```
 
 3. Create DataProc cluster: 
-```gcloud dataproc clusters create acled-pyspark-processing \
+```
+gcloud dataproc clusters create acled-pyspark-processing \
     --region=us-west1 \
     --single-node \
     --master-machine-type=n1-standard-2 \
@@ -23,10 +24,13 @@
 ```
 
 4. Copy PySpark job file from Google Cloud Storage into current terminal session:
+
 ```gsutil cp -r gs://${BUCKET-NAME}/acled_pyspark_analytics.py .```
 
 5. Submit PySpark job to DataProc: 
-```gcloud dataproc jobs submit pyspark acled_pyspark_analytics.py \
+
+```
+gcloud dataproc jobs submit pyspark acled_pyspark_analytics.py \
     --jars gs://spark-lib/bigquery/spark-bigquery-latest.jar \
     --cluster acled-pyspark-processing \
     --region=us-west1 \
