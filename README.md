@@ -2,8 +2,15 @@
 
 ### Using pyspark, I wanted to work with google cloud's dataproc compute engine and simulate a batch processing of a "large" csv file
 
+__Taken from ACLED:__ "ACLED collects real-time data on the locations, dates, actors, fatalities, and types of all reported political violence and protest events across Africa, the Middle East, Latin America & the Caribbean, East Asia, South Asia, Southeast Asia, Central Asia & the Caucasus, Europe, and the United States of America."  
+LINK for more info: https://acleddata.com/#/dashboard  
+
+##### Data is from January 1st, 2020 through to December 31st, 2020
+Dataset file size: 133 mb 
+
+
 ### Steps within Google Cloud Shell
-1. Enable Google DataProc: 
+#### 1. Enable Google DataProc: 
 
 ```gcloud services enable dataproc.googleapis.com``` 
 
